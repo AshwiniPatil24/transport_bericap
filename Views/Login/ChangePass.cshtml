@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "ChangePass";
+}
+
+
+
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+ 
+@using (Html.BeginForm("ChangePass","Login",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+ <div class="container">  
+ 
+        <div id="loginbox" style=" margin-left:10%; width:40%" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title" >Change Pass</div>
+                        
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form">
+                                    
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control" name="userid" value="" placeholder="User ID" required="" >                                        
+                                    </div>
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="new-password" type="password" class="form-control" name="pass" placeholder="New Password" required="">
+                                    </div>   
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="old-password" type="password" class="form-control" name="oldpass" placeholder="Old Password" required="">
+                                    </div>    
+                            
+                            
+                                <div style="margin-top:10px" class="form-group">
+                                  
+                                    <div class="col-sm-12 controls">
+                                     <input type="submit"  class="btn btn-lg btn-primary btn-block" name="submit" value="Login" id="login"/>
+                                      
+
+                                    </div>
+                                </div>
+                           </form>
+                        </div>                     
+                    </div>  
+                         
+                         <p style="text-align:center; color:red;">@ViewBag.msg </p> 
+               </div>
+                
+           </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#new-password").change(function () {
+            var newP = $(this).val();
+            if (newP == "PASSWORD")
+            {
+                alert("New PASSWORD Can not be PASSWORD. Please enter some other password!");
+                $("#new-password").val("");
+                $("#new-password").focus();
+            }      
+                    })
+ 
+    });
+   
+</script>

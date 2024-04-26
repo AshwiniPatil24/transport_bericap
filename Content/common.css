@@ -1,0 +1,185 @@
+﻿/********************* tabs Primary**************************/
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li > a,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #fff;
+}
+.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+	color: #fff;
+	background-color: #3071a9;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+	color: #428bca;
+	background-color: #fff;
+	border-color: #428bca;
+	border-bottom-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #428bca;
+    border-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #fff;   
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    background-color: #4a9fe9;
+}
+/********************* tabs Primary End**************************/
+
+.example3 .navbar-brand {
+  height: 80px;
+  
+}
+
+.example3 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  color:white;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  }
+
+
+.text {
+    font-size:14px;
+    font-weight:bold;
+   
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    border-radius:5px;
+    
+}
+.navbar-fixed-bottom{
+	position:fixed;
+	width:100%;
+    height:30px;
+	margin:auto;
+    background-color:#37a0d5;
+    text-align:right;
+}
+#foo {
+    padding-top:10px;
+    margin-right:30px;
+    color:#37a0d5;
+}
+
+body {
+  height: 100%;
+  background-color:#fff;
+  
+}
+.table table-hover {
+    text-align:center;
+    padding-left: 100px;
+}
+
+.navbar-static-top {
+      background-color:deepskyblue;
+      height:80px;
+      position:relative;
+    
+}
+.navbar-brand {
+    font-size: 50px;
+}
+.table-hover > tbody > tr:hover {
+background-color: #fbdfdf;
+}
+.rnbody {
+    margin-left:2%;
+   
+}
+.ui-datepicker-week-end a {
+   background-color:red ;
+}
+
+.loader {
+position:fixed;
+left:0px;
+top:0px;
+width:100%;
+height:100%;
+z-index:9999;
+background:url('images/pageLoader.gif') 50% 50% no-repeat rgb(249,249,249);
+opacity:.8;
+
+}
+
+
+/*.pvtbl tr::first-line {
+  background-color:rgba(0, 0, 0, 0.15); 
+  font-size:14px
+    
+}*/
+
+.table {
+    background-color:rgba(0, 0, 0, 0.15);
+}
+
+
+.beriapp {
+      /*padding-bottom:90%;*/
+      text-align:right;
+      font-size:50px;
+      font-family:'Arial Black';
+     /*color:#fbcb59;*/
+}
+
+
+
+

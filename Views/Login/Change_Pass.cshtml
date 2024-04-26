@@ -1,0 +1,101 @@
+﻿@model Beri_Fin.Models.LOGIN
+
+@{
+    ViewBag.Title = "Change_Pass";
+}
+
+ <script src="~/Scripts/jquery-2.2.3.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/additional-methods.js"></script>
+    <script src="~/Scripts/additional-methods.min.js"></script>
+
+
+
+<h2 style="text-align:center">Change Password</h2>
+<form id="newform" method="post" novalidate="novalidate">
+    <input type="text"name="idd" value="@ViewBag.id" hidden="hidden"/>
+<table style=" margin-left: 10%" class="table table-bordered table-hover">
+ <tr>
+     <th>Old Password:</th>
+         <td><input type="text" id="op"  name="op"/></td>
+            
+         
+</tr>
+ <tr>
+      <th>New Password:</th>
+          <td>
+             <input type="text" id="np" name="np" />
+         </td>
+    </tr>
+ <tr>
+      <th>Confirm Password:</th>
+          <td>
+            <input type="text" id="np1" name="np1" />
+         </td>
+</tr>
+
+</table>
+    <p style="text-align:center">
+       <input type="submit" id="submitBtn" class="btn btn-success" value="Change Password" />
+    </p>
+</form>
+
+
+   
+
+
+    <script type="text/javascript">
+     $('document').ready(function () {
+         debugger
+         //$('[id$=np1]').rules("add", {
+         //    equalTo: '#np',
+         //    messages: {
+         //        required: "values does not match."
+         //    }
+         //});
+
+         // Setup form validation on the #register-form element
+         $("#newform").validate({
+
+             // Specify the validation rules
+             rules: {
+                 op: "required",
+                 que: "required",
+                 np: {
+                     required: true,
+                     minlength: 5,
+                     maxlength: 10
+                 },
+                 np1: {
+                     equalTo: "#np",
+                     minlength: 5,
+                     maxlength: 10
+                 }
+               
+                
+
+             },
+
+             // Specify the validation error messages
+             messages: {
+                 op: "Please enter old password",
+                 np: "Password should between 5 to 10 letters "
+                 
+
+             },
+
+             submitHandler: function (form) {
+                 // alert("true");
+                 $('#newform')[0].submit();
+                 $("#submitBtn").prop("disabled", true); //disable to prevent multiple submits
+                 form.submit();
+             }
+         });
+
+     });
+
+ </script> 

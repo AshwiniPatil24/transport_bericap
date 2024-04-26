@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BeriCap</title>
+
+</head>
+<body>
+     
+<div class="example3">
+
+  <nav class="navbar navbar-default navbar-static-top">
+
+    <div class="container-fluid"  >
+       
+           <div class="navbar-header" >
+        
+        <a class="navbar-brand" href="http://www.bericap.com//" >
+            <img src="~/Content/Bericap_logo.png" /> </a>
+        
+      </div>
+ 
+      <div id="navbar3" class="navbar-collapse collapse"  >
+          
+      <ul class="nav navbar-nav navbar-right" >
+        
+
+          <li class="dropdown" > <a class="dropdown-toggle" id="user1" href="#" style ="color:white"><span class="glyphicon glyphicon-user"></span>@Session["userid"] <b class="caret" style="color:white"></b></a>
+                    <ul class="dropdown-menu" >
+                         <li><a  href="@Url.Action("Logout","Login")"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    </ul>
+          </li>
+    </ul>        
+             
+        
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+</div>
+
+    <div class="rnbody">@RenderBody()</div>
+    </body>
+</html>
+ 
+       

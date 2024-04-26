@@ -1,0 +1,52 @@
+﻿body {
+}
+
+
+     .webGrid {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #fefdfb;
+      
+    }
+
+    .header {
+        background-color: #C1D4E6;
+        font-weight: bold;
+        color: #FFF;
+        display:none;
+       
+    }
+
+    .webGrid th, .webGrid td {
+       
+    }
+
+    .alt {
+        background-color: #fcf9f9;
+        color: #000;
+    }
+
+    .gridHead a:hover {
+        text-decoration: underline;
+    }
+
+    .description {
+        width: auto;
+    }
+
+    .select {
+        background-color: #71857C;
+    }
+    #pager a {
+    color: pink;
+    text-decoration: none;
+}
+#pager a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+
+.btn_grid{background-color:#FFF;border:1px #FFF solid;color:#428BCA; border-radius:5px;padding:0px 5px;}
+.btn_grid:hover{background-color:#b8d0fa; color:#f89a05;}
+

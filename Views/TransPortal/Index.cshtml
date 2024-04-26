@@ -1,0 +1,272 @@
+﻿@model IEnumerable<TransPortal.Models.TRANSINVOICE1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@if (ViewBag.flag == "Y") { 
+<div class="btn btn-primary btnp"> @Html.ActionLink("Click here to go to Index", "Index", "TransPortal", null, new{@style="color:white"})</div>
+}
+else{
+<div class="btn btn-success btns" > @Html.ActionLink("Click here to go to  History", "Index", "TransPortal", new { History = "Y" },new{@style="color:white"})</div>
+}   
+
+<hr>
+<table class="table  table-striped table-hover" style="overflow-y:scroll">
+    <tr style="background-color:deepskyblue">
+        @if (ViewBag.flag == "Y") {  }else{<th> </th>}
+         <th hidden="hidden">
+           LR. No.
+        </th>
+       <th >
+           LR. No.
+        </th>
+
+        <th>
+           Billing Date
+        </th>
+        <th>
+            Name  &  Location STP
+        </th>
+         <th>
+           Quantity
+        </th>
+        <th>
+           Boxes
+        </th>
+        <th>
+           Incoterm
+        </th>
+       
+        <th>
+           Vehicle Type
+        </th>
+        <th>
+           Vehicle No
+        </th>
+        <th>
+           GST-STP
+        </th>
+        <th>
+            GST-SOP
+        </th>  
+          @if (ViewBag.flag == "Y") {<th> Reporting Date </th><th> Releasing Date   </th>  }else{}
+        
+ 
+       
+    </tr>
+@if ( Model != null ) {
+        int i = 1;
+
+foreach (var item in Model)
+{
+     
+    <tr  >
+         @if (ViewBag.flag == "Y") {  }
+         else{
+             <td>
+            @Html.RadioButton("rad1",false,false,new{@id=i,@class="radio rad"})
+           
+        </td>
+         }
+        
+         <td class="id" hidden="hidden">
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td class="invoice" hidden="hidden">
+            @Html.DisplayFor(modelItem => item.LR_NO)
+        </td>       
+        <td >
+            @Html.DisplayFor(modelItem => item.LR_NO).ToString().Substring(4,(item.LR_NO.Length-4))
+        </td> 
+
+        <td>
+            @Html.DisplayFor(modelItem => item.BILL_DT)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.STP_NAME)
+        <span>-</span>
+             @Html.DisplayFor(modelItem => item.STP_LCN)
+        </td>
+         <td>
+           @Html.DisplayFor(modelItem => item.BILL_QTY_T)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NO_BOX_QTY_T)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INCOT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEH_TYP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEH_NO)
+        </td>             
+        <td>
+           @Html.DisplayFor(modelItem => item.GST_STP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GST_SOP)
+        </td>  
+        @if (ViewBag.flag == "Y") { 
+             <td>  
+                 @Html.DisplayFor(modelItem => item.REP_DT) 
+             </td> <td>  
+                @Html.DisplayFor(modelItem => item.REL_DT) 
+            </td>}
+        else{
+            
+            }
+       
+    </tr> 
+    i++;
+    
+}
+}
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <div>
+                <div>
+                   Reporting Date : <input type="date" id="dtrep" required="required"/>
+                   Time : <input type="time" id="tmerep" required="required"/>
+                </div>
+                <br />
+                 <div >
+                   Releasing Date :  <input type="date" id="dtrel" required="required"/>
+                   Time : <input type="time" id="tmerel"  required="required"/>
+                 </div>
+             </div>
+         
+        </div>
+        <div class="modal-footer">
+             <button type="button" id="save" class="btn btn-success" data-dismiss="modal">Save</button>
+             <button type="button" class="btn btn-success close1" data-dismiss="modal" >Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+     <div class="modal fade" id="myModal1" role="dialog">
+     <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <div>
+                 Are you sure you want to submt the values ? 
+             </div>
+         
+        </div>
+        <div class="modal-footer">
+             <button type="button" id="yes" class="btn btn-success" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</table>
+
+<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+ 
+<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ 
+<script type="text/javascript"  src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+ 
+ 
+  <script src="~/Scripts/bootstrap.min.js"></script>
+  <script src="~/Scripts/moment.js"></script>
+
+<script  type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+ 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/common.css" rel="stylesheet" />
+
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+       
+
+        $('.btns btnp').on('click', function () {
+         
+        })
+
+
+        $idd=""
+        $yes=""
+        $rep = ""
+        $rel=""
+        function reset() {
+            
+              $('.rad').each( function () {
+                  $(this).attributeContainsWord('Checked', false);
+            })
+
+        }
+        $('.close1').on('click', function () {           
+            reset();
+        })
+        $('.rad').on('click', function () {
+
+           $idd = $(this).closest('tr').find(".id").text().trim();
+           $('#myModal').modal('toggle');
+          })
+        $('#yes').on('click', function () {
+                 
+                var rootUrl = '@Url.Content("~")'
+            $.get('https://transportal.in.bericap.com:6443/TransPortal/saveDtInvoice/', { id: $idd, repdt: $rep, unldt: $rel }, function ($rep) {
+                       
+                        if ($rep == "Success") { location.reload(); }
+                        else { alert("Unable to save the record , please try again or check with system administrator."); }
+                    })
+                
+        })
+        $('#save').on('click', function () {
+            var tmrp = $("#tmerep").val();
+            var tmrl = $("#tmerel").val();
+            var dtrp = $("#dtrep").val();
+            var dtrl = $("#dtrel").val();
+            var dtrp1 = new Date(dtrp);
+            var dtrl1 = new Date(dtrl);
+            var flag = false;
+           
+            if (dtrp == "" || dtrp == null) { alert("Please enter Reporting date!!"); }
+            else if (dtrl == "" || dtrl == null) { alert("Please Enter Unloading date and time!!"); }
+            else if (tmrp == "" || tmrp == null) { alert("Please enter Reporting time!!"); }
+            else if (tmrl == "" || tmrl == null) { alert("Please Enter Unloading date and time!!"); }
+           
+            else if (dtrp > dtrl) { alert("Reporting date can not be greater than Unloading date and time!!"); }
+            else if (dtrp == dtrl) {
+                if (tmrp > tmrl) { alert("Reporting time can not be greater than Unloading time when unloaded vehicle on same day!!"); }
+                else { flag = true; }
+            }
+
+            else { flag = true; }
+
+            if (flag == true) {
+                $rep = $("#dtrep").val() + "T" + $("#tmerep").val();
+                $rel = $("#dtrel").val() + "T" + $("#tmerel").val();
+               
+                $('#myModal1').modal('toggle');
+            }
+
+         });
+    });
+    </script>
+<style type="text/css">
+    .modal-header {
+    background-color:#C5C5C5;
+     }
+</style>
